@@ -32,3 +32,12 @@
 
 решение представлено в файле [task2_README.md](task2/task2_README.md)
 
+## Задание 3. Создание векторного индекса базы знаний
+
+Эмбеддинг-модель — BGE-M3, векторная БД — FAISS для MVP
+
+Подробный отчёт: [Создание векторного индекса](task3/task3_README.md)
+
+36 документов из `task2/knowledge_base/` разбиты на **72 чанка** (RecursiveCharacterTextSplitter, 800 символов, перекрытие 150). Эмбеддинги сгенерированы моделью **BAAI/bge-m3** (1024 dim, локально на CPU). Индекс сохранён в FAISS (`task3/faiss_index/`). Время индексации — 9.1 сек. Тестовые запросы («Who is Kael Venarix?», «What is the Synth Flux?», «Tell me about the Void Core») возвращают релевантные чанки из правильных документов с хорошими score (L2 ≤ 0.73 для top-1).
+
+![build2.png](task3/img/build2.png)
