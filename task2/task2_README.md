@@ -23,8 +23,6 @@ task2/
 
 ## Как воспроизвести
 
-В файле [data-raw-knowledge_base](data-raw-knowledge_base.zip) упакованы папки raw и knowledge_base,  для просмотра распаковать в папку task2
-
 ```bash
 cd task2
 python scripts/build_raw_content.py    # 1. наполняет raw/ (36 файлов)
