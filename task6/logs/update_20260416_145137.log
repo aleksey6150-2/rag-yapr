@@ -1,0 +1,97 @@
+2026-04-16 14:51:37,147 [INFO] ============================================================
+2026-04-16 14:51:37,147 [INFO] Index update started (force=True)
+2026-04-16 14:51:37,147 [INFO] Knowledge base: /Users/jo/workspace/yandex-arch/rag-yapr/.claude/worktrees/distracted-mccarthy/task2/knowledge_base
+2026-04-16 14:51:37,147 [INFO] Index dir: /Users/jo/workspace/yandex-arch/rag-yapr/.claude/worktrees/distracted-mccarthy/task3/faiss_index
+2026-04-16 14:51:37,148 [INFO] New/changed files: 36
+2026-04-16 14:51:37,148 [INFO] Deleted files: 1
+2026-04-16 14:51:37,148 [INFO] Loading embedding model: BAAI/bge-m3
+2026-04-16 14:51:37,718 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:37,719 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-16 14:51:37,860 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:38,033 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:38,107 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:38,111 [INFO] Loading SentenceTransformer model from BAAI/bge-m3.
+2026-04-16 14:51:38,281 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:38,392 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:38,568 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:38,638 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-04-16 14:51:38,814 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:38,914 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:39,088 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:39,156 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:39,332 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 14:51:39,506 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:39,579 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:39,788 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-04-16 14:51:40,009 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-04-16 14:51:40,224 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-04-16 14:51:40,385 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 14:51:40,491 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-04-16 14:51:40,577 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 14:51:40,705 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-04-16 14:51:40,751 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 14:51:40,879 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-04-16 14:51:41,012 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-04-16 14:51:41,052 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-04-16 14:51:41,193 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:41,267 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:41,442 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:41,598 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:41,779 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:41,850 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:42,059 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:42,139 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:42,329 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-16 14:51:42,585 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-16 14:51:43,801 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-04-16 14:51:43,983 [INFO] HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-16 14:51:44,053 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-16 14:51:44,234 [INFO] HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-04-16 14:51:44,240 [INFO] Full reindex: 36 files
+2026-04-16 14:51:44,241 [INFO]   xarn_velgor.md: 2 chunks
+2026-04-16 14:51:44,242 [INFO]   dreadnought_hammer.md: 2 chunks
+2026-04-16 14:51:44,242 [INFO]   overlord_nocturn.md: 2 chunks
+2026-04-16 14:51:44,243 [INFO]   quorin_jael.md: 2 chunks
+2026-04-16 14:51:44,244 [INFO]   shrike_fighter.md: 2 chunks
+2026-04-16 14:51:44,245 [INFO]   warp_coil.md: 2 chunks
+2026-04-16 14:51:44,245 [INFO]   seldaris.md: 2 chunks
+2026-04-16 14:51:44,246 [INFO]   talon_class_fighter.md: 2 chunks
+2026-04-16 14:51:44,246 [INFO]   pyrovex.md: 2 chunks
+2026-04-16 14:51:44,247 [INFO]   drexan_morr.md: 2 chunks
+2026-04-16 14:51:44,248 [INFO]   tessar_vaal.md: 2 chunks
+2026-04-16 14:51:44,249 [INFO]   morvenn.md: 2 chunks
+2026-04-16 14:51:44,249 [INFO]   thulkhar.md: 2 chunks
+2026-04-16 14:51:44,250 [INFO]   free_coalition.md: 2 chunks
+2026-04-16 14:51:44,250 [INFO]   ankarin_venarix.md: 2 chunks
+2026-04-16 14:51:44,250 [INFO]   pyrentis.md: 2 chunks
+2026-04-16 14:51:44,251 [INFO]   verenthia.md: 2 chunks
+2026-04-16 14:51:44,251 [INFO]   z7_k2.md: 2 chunks
+2026-04-16 14:51:44,252 [INFO]   p4_t0.md: 2 chunks
+2026-04-16 14:51:44,252 [INFO]   kael_venarix.md: 2 chunks
+2026-04-16 14:51:44,253 [INFO]   resonant_core.md: 2 chunks
+2026-04-16 14:51:44,253 [INFO]   starfang.md: 2 chunks
+2026-04-16 14:51:44,253 [INFO]   tidaris.md: 2 chunks
+2026-04-16 14:51:44,253 [INFO]   seryn_kaldreth.md: 2 chunks
+2026-04-16 14:51:44,254 [INFO]   the_synth_flux.md: 2 chunks
+2026-04-16 14:51:44,254 [INFO]   ozul.md: 2 chunks
+2026-04-16 14:51:44,254 [INFO]   velran_tessik.md: 2 chunks
+2026-04-16 14:51:44,254 [INFO]   varran_korr.md: 2 chunks
+2026-04-16 14:51:44,254 [INFO]   iron_dominion.md: 2 chunks
+2026-04-16 14:51:44,255 [INFO]   void_core.md: 2 chunks
+2026-04-16 14:51:44,255 [INFO]   kyrnal.md: 2 chunks
+2026-04-16 14:51:44,255 [INFO]   grommak.md: 2 chunks
+2026-04-16 14:51:44,255 [INFO]   pyrenne_amalis.md: 2 chunks
+2026-04-16 14:51:44,255 [INFO]   plasma_blade.md: 2 chunks
+2026-04-16 14:51:44,255 [INFO]   veylarian_order.md: 2 chunks
+2026-04-16 14:51:44,256 [INFO]   dorveth_pact.md: 2 chunks
+2026-04-16 14:51:55,855 [INFO] Loading faiss.
+2026-04-16 14:51:55,909 [INFO] Successfully loaded faiss.
+2026-04-16 14:51:55,916 [INFO] FAISS index built in 11.7s
+2026-04-16 14:51:55,928 [INFO] ------------------------------------------------------------
+2026-04-16 14:51:55,928 [INFO] Index updated at 2026-04-16 14:51:55
+2026-04-16 14:51:55,928 [INFO]   Files processed: 36
+2026-04-16 14:51:55,928 [INFO]   Files deleted: 1
+2026-04-16 14:51:55,928 [INFO]   Total chunks in index: 72
+2026-04-16 14:51:55,928 [INFO]   Total time: 18.8s
+2026-04-16 14:51:55,928 [INFO]   Log: /Users/jo/workspace/yandex-arch/rag-yapr/.claude/worktrees/distracted-mccarthy/task6/logs/update_20260416_145137.log
+2026-04-16 14:51:55,928 [INFO] ============================================================

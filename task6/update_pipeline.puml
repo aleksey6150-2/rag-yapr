@@ -1,0 +1,59 @@
+@startuml update_pipeline
+!theme plain
+skinparam backgroundColor #FEFEFE
+skinparam componentStyle rectangle
+
+title Архитектура ежедневного обновления индекса
+
+actor "cron (06:00)" as cron
+
+package "Источник данных" {
+    folder "knowledge_base/" as kb {
+        file "*.md\n(36+ файлов)" as docs
+    }
+}
+
+package "update_index.py" as script {
+    component "1. Scan\n(hash-сравнение\nс manifest.json)" as scan
+    component "2. Chunk\n(RecursiveCharacter\nTextSplitter\n800 симв.)" as chunk
+    component "3. Embed\n(BGE-M3\n1024 dim)" as embed
+    component "4. Update\n(FAISS\nadd_documents)" as update
+}
+
+database "manifest.json\n{file: hash, mtime}" as manifest
+database "faiss_index/\n(index.faiss\n+ index.pkl)" as index
+file "logs/\nupdate_YYYYMMDD.log" as logs
+
+cron --> scan : запуск
+kb --> scan : список файлов
+manifest --> scan : предыдущие хэши
+scan --> chunk : новые/\nизменённые
+chunk --> embed : чанки
+embed --> update : эмбеддинги
+update --> index : обновлённый\nиндекс
+scan --> manifest : обновление\nхэшей
+script --> logs : результат
+
+note right of scan
+  Сравниваем SHA-256 каждого файла
+  с сохранённым в manifest.json.
+  Если хэш изменился или файла нет
+  в манифесте — обрабатываем.
+end note
+
+note right of update
+  Инкрементальное обновление:
+  add_documents() к существующему
+  индексу. При --force — полная
+  пересборка.
+end note
+
+note bottom of logs
+  Формат лога:
+  2025-07-17 06:00:01 [INFO]
+  Files processed: 3
+  Total chunks: 78
+  Total time: 15.2s
+end note
+
+@enduml

@@ -1,0 +1,23 @@
+services:
+  bot:
+    build: .
+    container_name: rag-bot
+    restart: unless-stopped
+    environment:
+      # LLM — выбери один из вариантов:
+      # Вариант 1: Ollama (локальный LLM, бесплатно)
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-qwen2.5:7b}
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      # Вариант 2: OpenAI (раскомментируй и убери OLLAMA_MODEL)
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # Вариант 3: Google Gemini (раскомментируй и убери OLLAMA_MODEL)
+      # - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+
+      # Telegram
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    volumes:
+      # FAISS-индекс можно обновлять без пересборки образа
+      - ./task3/faiss_index:/app/task3/faiss_index:ro
+    # Доступ к Ollama на хосте (host.docker.internal на macOS/Windows)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
