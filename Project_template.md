@@ -41,3 +41,13 @@
 36 документов из `task2/knowledge_base/` разбиты на **72 чанка** (RecursiveCharacterTextSplitter, 800 символов, перекрытие 150). Эмбеддинги сгенерированы моделью **BAAI/bge-m3** (1024 dim, локально на CPU). Индекс сохранён в FAISS (`task3/faiss_index/`). Время индексации — 9.1 сек. Тестовые запросы («Who is Kael Venarix?», «What is the Synth Flux?», «Tell me about the Void Core») возвращают релевантные чанки из правильных документов с хорошими score (L2 ≤ 0.73 для top-1).
 
 ![build2.png](task3/img/build2.png)
+
+## Задание 4. Реализация RAG-бота с техниками промптинга
+
+Подробный отчёт: [RAG-бот с промптингом](task4/task4_README.md)
+
+RAG-пайплайн: FAISS retriever (top-4) → промпт с Few-shot (2 примера из базы) + Chain-of-Thought → OpenAI gpt-4o-mini (temperature=0.1) → ответ с источниками. Два интерфейса: **Telegram-бот** (тариф Про) и консольный REPL. Бот отвечает по контексту из базы знаний, цитирует источники и честно отказывается при отсутствии информации.
+
+Не удалось победить с внешней LLM  из-за региональной принадлежности, запустил на локальной Ollama:
+
+![telegram-bot-answ.png](task4/img/telegram-bot-answ.png)
