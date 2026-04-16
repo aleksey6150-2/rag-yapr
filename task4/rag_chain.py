@@ -147,10 +147,13 @@ class RAGBot:
         if ollama_model or (not google_key and not openai_key):
             from langchain_ollama import ChatOllama
             model = ollama_model or os.getenv("RAG_LLM_MODEL", "qwen2.5:7b")
-            print(f"Initializing LLM: Ollama {model}...")
+            # В Docker контейнере Ollama доступна через host.docker.internal
+            base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+            print(f"Initializing LLM: Ollama {model} at {base_url}...")
             return ChatOllama(
                 model=model,
                 temperature=0.1,
+                base_url=base_url,
             )
 
         # 2. Google Gemini

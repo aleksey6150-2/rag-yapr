@@ -1,0 +1,76 @@
+@startuml evaluation_sequence
+!theme plain
+skinparam backgroundColor #FEFEFE
+
+title Sequence Diagram: обработка запроса и оценка качества
+
+actor User
+participant "Telegram /\nConsole" as UI
+participant "RAGBot" as Bot
+participant "FAISS\nRetriever" as FAISS
+participant "Post-filter" as Filter
+participant "LLM\n(Ollama)" as LLM
+database "logs.jsonl" as Log
+
+== Обработка запроса ==
+
+User -> UI : текст вопроса
+UI -> Bot : ask_with_sources(question)
+
+Bot -> Bot : embed(question)\nчерез BGE-M3
+Bot -> FAISS : similarity_search(vector, k=4)
+
+alt Чанки найдены
+    FAISS --> Bot : top-4 chunks + metadata
+    Bot -> Filter : проверка на injection
+
+    alt Injection обнаружен
+        Filter --> Bot : blocked_chunks > 0
+        note right: Вредоносные чанки\nудалены из контекста
+    else Чисто
+        Filter --> Bot : все чанки безопасны
+    end
+
+    Bot -> Bot : format prompt\n(System + Few-shot + CoT + Context)
+    Bot -> LLM : generate(prompt)
+
+    alt LLM ответил
+        LLM --> Bot : answer text
+    else Ошибка LLM
+        LLM --> Bot : error
+        Bot --> UI : "Error processing"
+        note right #FFB3B3: **Сбой:** LLM недоступен\nили timeout
+    end
+
+else Пустой результат / нерелевантные чанки
+    FAISS --> Bot : low-score chunks
+    Bot -> LLM : prompt с нерелевантным контекстом
+    LLM --> Bot : "I don't have enough information..."
+    note right #FFFFB3: **Сбой:** пробел в базе знаний.\nДокумент не индексирован.
+end
+
+Bot --> UI : {answer, sources, blocked_chunks}
+UI --> User : ответ + источники
+
+== Оценка качества (evaluate.py) ==
+
+participant "evaluate.py" as Eval
+database "golden_questions.json" as GQ
+
+Eval -> GQ : загрузить вопросы
+loop для каждого вопроса
+    Eval -> Bot : ask_with_sources(question)
+    Bot --> Eval : {answer, sources}
+    Eval -> Eval : check_answer_contains()\ncheck_sources()\nis_no_answer()
+    Eval -> Log : записать результат
+    note right of Log
+        {question, answer_length,
+         sources, terms_found,
+         success, latency_s}
+    end note
+end
+
+Eval -> Eval : generate_report()
+note right: Анализ по топикам,\nвыявление пробелов,\nрекомендации
+
+@enduml

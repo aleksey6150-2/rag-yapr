@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "question": "Who is Kael Venarix and where was he born?",
+    "expected_answer_contains": ["Kael Venarix", "Seldaris"],
+    "expected_sources": ["kael_venarix.md"],
+    "category": "known",
+    "topic": "characters"
+  },
+  {
+    "id": 2,
+    "question": "What is the Iron Dominion?",
+    "expected_answer_contains": ["Iron Dominion"],
+    "expected_sources": ["iron_dominion.md"],
+    "category": "known",
+    "topic": "factions"
+  },
+  {
+    "id": 3,
+    "question": "Describe the plasma-blade weapon",
+    "expected_answer_contains": ["plasma-blade", "resonant core"],
+    "expected_sources": ["plasma_blade.md"],
+    "category": "known",
+    "topic": "technology"
+  },
+  {
+    "id": 4,
+    "question": "Who is Seryn Kaldreth?",
+    "expected_answer_contains": ["Seryn Kaldreth", "Free Coalition"],
+    "expected_sources": ["seryn_kaldreth.md"],
+    "category": "known",
+    "topic": "characters"
+  },
+  {
+    "id": 5,
+    "question": "What planet is Kyrnal and what is it known for?",
+    "expected_answer_contains": ["Kyrnal"],
+    "expected_sources": ["kyrnal.md"],
+    "category": "known",
+    "topic": "planets"
+  },
+  {
+    "id": 6,
+    "question": "Who is Ozul and what did he teach?",
+    "expected_answer_contains": ["Ozul", "Veylar"],
+    "expected_sources": ["ozul.md"],
+    "category": "known",
+    "topic": "characters"
+  },
+  {
+    "id": 7,
+    "question": "What is the Veylarian Order?",
+    "expected_answer_contains": ["Veylarian Order", "Veylar"],
+    "expected_sources": ["veylarian_order.md"],
+    "category": "known",
+    "topic": "factions"
+  },
+  {
+    "id": 8,
+    "question": "Describe the Starfang ship",
+    "expected_answer_contains": ["Starfang"],
+    "expected_sources": ["starfang.md"],
+    "category": "known",
+    "topic": "technology"
+  },
+  {
+    "id": 9,
+    "question": "What is the Void Core and how was it destroyed?",
+    "expected_answer_contains": ["Void Core"],
+    "expected_sources": ["void_core.md"],
+    "category": "gap",
+    "topic": "technology",
+    "gap_reason": "void_core.md removed from index"
+  },
+  {
+    "id": 10,
+    "question": "Who is Xarn Velgor and what is his relationship to Kael?",
+    "expected_answer_contains": ["Xarn Velgor", "father"],
+    "expected_sources": ["xarn_velgor.md"],
+    "category": "gap",
+    "topic": "characters",
+    "gap_reason": "xarn_velgor.md removed from index"
+  },
+  {
+    "id": 11,
+    "question": "What is the Synth Flux and how does it work?",
+    "expected_answer_contains": ["Synth Flux", "energy"],
+    "expected_sources": ["the_synth_flux.md"],
+    "category": "gap",
+    "topic": "concepts",
+    "gap_reason": "the_synth_flux.md removed from index"
+  },
+  {
+    "id": 12,
+    "question": "What are the two sides of the Synth Flux?",
+    "expected_answer_contains": ["Luminar", "Dorveth"],
+    "expected_sources": ["the_synth_flux.md"],
+    "category": "gap",
+    "topic": "concepts",
+    "gap_reason": "the_synth_flux.md removed from index"
+  },
+  {
+    "id": 13,
+    "question": "How did Xarn Velgor become a Dorveth lord?",
+    "expected_answer_contains": ["Xarn Velgor", "Dorveth"],
+    "expected_sources": ["xarn_velgor.md"],
+    "category": "gap",
+    "topic": "characters",
+    "gap_reason": "xarn_velgor.md removed from index"
+  }
+]
