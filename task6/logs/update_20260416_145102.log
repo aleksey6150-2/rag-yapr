@@ -1,0 +1,6 @@
+2026-04-16 14:51:02,709 [INFO] ============================================================
+2026-04-16 14:51:02,709 [INFO] Index update started (force=False)
+2026-04-16 14:51:02,709 [INFO] Knowledge base: /Users/jo/workspace/yandex-arch/rag-yapr/.claude/worktrees/distracted-mccarthy/task2/knowledge_base
+2026-04-16 14:51:02,709 [INFO] Index dir: /Users/jo/workspace/yandex-arch/rag-yapr/.claude/worktrees/distracted-mccarthy/task3/faiss_index
+2026-04-16 14:51:02,713 [INFO] No changes detected. Index is up to date.
+2026-04-16 14:51:02,713 [INFO] Completed in 0.0s
